@@ -34,24 +34,22 @@ export const MycardsSection = () => {
 				"https://images.pexels.com/photos/3050275/pexels-photo-3050275.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 		}
 	];
-	return (
-		// crear map
-		CardsContent.map((card, i) => {
-			return (
-				<Card
-					style={{
-						width: "18rem",
-						display: "inline-block"
-					}}
-					key={i}
-					className>
-					<Card.Img variant="top" src={card.imgUrl} />
-					<Card.Body>
-						<Card.Title>{card.title}</Card.Title>
-						<Card.Text>{card.description}</Card.Text>
-					</Card.Body>
-				</Card>
-			);
-		})
-	);
+	// crear map
+	let myGenerator = CardsContent.map((card, i) => {
+		return (
+			<Card
+				style={{
+					width: "18rem",
+					display: "inline-block"
+				}}
+				key={i}>
+				<Card.Img variant="top" src={card.imgUrl} />
+				<Card.Body>
+					<Card.Title>{card.title}</Card.Title>
+					<Card.Text>{card.description}</Card.Text>
+				</Card.Body>
+			</Card>
+		);
+	});
+	return <div className="d-flex justify-content-center">{myGenerator}</div>;
 };
