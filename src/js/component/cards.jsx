@@ -1,10 +1,8 @@
 import React from "react";
-
 import ReactDOM from "react-dom";
-
 import Card from "react-bootstrap/Card";
-
 import PropTypes from "prop-types";
+import { Button } from "./button.jsx";
 
 export const MycardsSection = () => {
 	// crear array de objetos
@@ -46,8 +44,13 @@ export const MycardsSection = () => {
 					<Card.Title>{card.title}</Card.Title>
 					<Card.Text>{card.description}</Card.Text>
 				</Card.Body>
+				<div className="d-flex justify-content-center mb-2">
+					<Button />
+				</div>
 			</Card>
 		);
 	});
-	return <div className="d-flex justify-content-center">{myGenerator}</div>;
+	return (
+		<div className="d-flex justify-content-center mb-5">{myGenerator}</div>
+	);
 };
